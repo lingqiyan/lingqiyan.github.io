@@ -49,9 +49,9 @@ body {
   background:
     radial-gradient(circle at 15% 0%, rgba(46, 98, 136, .26), transparent 30rem),
     linear-gradient(180deg, #1b2838 0%, #192635 58%, #17202d 100%) fixed !important;
-  font-family: Arial, "Helvetica Neue", "Segoe UI", "Noto Sans", sans-serif !important;
-  font-size: 15px !important;
-  line-height: 1.4 !important;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  font-size: 14px !important;
+  line-height: 1.42 !important;
   font-weight: 500;
   font-kerning: normal;
   text-rendering: optimizeLegibility;
@@ -71,8 +71,8 @@ body::before {
 .navbar > .container { min-height: 54px; }
 .navbar-brand {
   display: inline-flex; align-items: center; gap: 9px; min-width: 0;
-  color: #f5f5f5 !important; font-size: 15px !important; font-weight: 700;
-  font-family: Arial, "Helvetica Neue", "Segoe UI", sans-serif !important;
+  color: #f5f5f5 !important; font-size: 14px !important; font-weight: 600;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
   letter-spacing: -.01em; padding: 15px 0 !important; white-space: nowrap;
 }
 .navbar-brand::before { display: none; }
@@ -85,7 +85,7 @@ body::before {
 .mbzuai-mark img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .mbzuai-name {
   display: block; max-width: 380px; overflow: hidden; text-overflow: ellipsis;
-  color: #f0f0f0; font-size: 14px; font-weight: 700; letter-spacing: -.018em;
+  color: #f0f0f0; font-size: 13px; font-weight: 600; letter-spacing: -.012em;
 }
 .steam-cart {
   order: 3; display: inline-flex; align-items: center; justify-content: center; margin-left: 10px;
@@ -118,8 +118,8 @@ body::before {
 .program-director-modal .modal-body h4 { margin: 0 0 8px !important; }
 .program-director-modal .modal-body p { margin: 0 !important; line-height: 1.45 !important; }
 .navbar-nav .nav-link {
-  color: #d6d7d8 !important; font-size: 13px; font-weight: 700; text-transform: uppercase;
-  letter-spacing: .035em; padding: 19px 10px 17px !important;
+  color: #d6d7d8 !important; font-size: 12px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: .05em; padding: 19px 10px 17px !important;
   border-bottom: 2px solid transparent;
 }
 .navbar-nav .nav-link:hover, .navbar-nav .active .nav-link {
@@ -179,16 +179,16 @@ body > .container > .row:first-of-type > .col-md-4 h3 {
 }
 body > .container > .row:first-of-type > .col-md-4 h3 small {
   display: block; margin-top: 26px; color: #8f98a0 !important;
-  font-size: 15px; font-weight: 600; line-height: 1.36;
+  font-size: 14px; font-weight: 600; line-height: 1.38;
 }
 body > .container > .row:first-of-type > .col-md-4 p {
-  margin-bottom: 9px !important; color: #c7d5e0; font-size: 14px; font-weight: 500; line-height: 1.42 !important;
+  margin-bottom: 9px !important; color: #c7d5e0; font-size: 12px; font-weight: 500; line-height: 1.5 !important;
 }
 body > .container > .row:first-of-type > .col-md-4 p:first-of-type { white-space: nowrap; }
 body > .container > .row:first-of-type > .col-md-4 i { color: #66c0f4; width: 17px; }
 body > .container > .row:first-of-type > .col-md-5 h3 {
   margin: 0 0 7px !important; color: #fff !important;
-  font-size: 15px !important; font-weight: 700 !important; text-transform: uppercase;
+  font-size: 14px !important; font-weight: 700 !important; text-transform: uppercase;
   letter-spacing: -.01em;
 }
 body > .container > .row:first-of-type > .col-md-5 ul {
@@ -197,7 +197,7 @@ body > .container > .row:first-of-type > .col-md-5 ul {
 }
 body > .container > .row:first-of-type > .col-md-5 li {
   position: relative; padding: 5px 5px 5px 12px;
-  color: #acb2b8; font-size: 13px; font-weight: 500; line-height: 1.34;
+  color: #acb2b8; font-size: 12px; font-weight: 500; line-height: 1.35;
   border-bottom: 1px solid rgba(102,192,244,.07);
 }
 body > .container > .row:first-of-type > .col-md-5 li::before {
@@ -208,7 +208,7 @@ body > .container > .row:first-of-type > .col-md-5 li b { color: #67c1f5; font-w
 #old_news { display: contents !important; }
 h1, h2, h3, h4, h5, h6 {
   color: #fff !important; line-height: 1.2 !important;
-  font-family: Arial, "Helvetica Neue", "Segoe UI", sans-serif !important;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
   font-stretch: normal; font-weight: 700 !important; letter-spacing: -.025em;
 }
 .name-cjk {
@@ -243,7 +243,7 @@ body > .container > h4, .publication-year-panel > h4 {
 .publication-tab {
   flex: 0 0 auto; min-width: 48px; padding: 6px 11px;
   color: #8f98a0; background: #1b2838; border: 0; border-bottom: 2px solid transparent;
-  border-radius: 0 !important; font-family: Arial, "Helvetica Neue", "Segoe UI", sans-serif;
+  border-radius: 0 !important; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 11px; font-weight: 500; letter-spacing: .07em; cursor: pointer;
 }
 .publication-tab:hover { color: #fff; background: #2a475e; }
@@ -348,8 +348,8 @@ table { color: var(--steam-text) !important; background: rgba(22,32,45,.5); }
   background: linear-gradient(180deg, #2f506b, #29445a) !important;
   border-color: rgba(102,192,244,.2) !important;
   border-bottom: 2px solid #1a9fff !important;
-  font-size: 12px !important;
-  font-weight: 700 !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
   letter-spacing: .055em;
   text-transform: uppercase;
   box-shadow: inset 0 1px rgba(255,255,255,.03);
@@ -432,8 +432,8 @@ table { color: var(--steam-text) !important; background: rgba(22,32,45,.5); }
   background: transparent !important; box-shadow: none;
 }
 .vert-offset-top-1 p { margin-bottom: 4px !important; }
-.vert-offset-top-1 p b { color: #fff; font-size: 15px; font-weight: 700; }
-.vert-offset-top-1 p i { color: #9da6ad; font-size: 13px; font-weight: 500; }
+.vert-offset-top-1 p b { color: #fff; font-size: 14px; font-weight: 600; }
+.vert-offset-top-1 p i { color: #8f98a0; font-size: 12px; font-weight: 500; }
 .col-md-3 > .img-fluid:first-child { border: 0 !important; }
 small, .text-muted { color: var(--steam-muted) !important; }
 #news, #bio, #research, #teaching, #publications, #misc { scroll-margin-top: 64px; }
@@ -457,7 +457,7 @@ hr.style-two {
   }
 }
 @media (max-width: 767px) {
-  body { padding-top: 50px !important; font-size: 14px !important; line-height: 1.38 !important; }
+  body { padding-top: 50px !important; font-size: 13px !important; line-height: 1.38 !important; }
   body > .container { padding: 10px 12px 20px !important; }
   .navbar-brand { max-width: calc(100% - 62px); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .navbar-brand::before { display: none; }
