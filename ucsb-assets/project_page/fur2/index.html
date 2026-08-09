@@ -1,0 +1,359 @@
+
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<style>
+body {
+    font-size: 16px;
+    font-size-adjust:0.5;
+}
+smallsec {
+    font-size: 18px;
+    font-size-adjust:0.5;
+	font-weight:bold;
+}
+.icon{
+vertical-align:middle;
+padding-right:5px;
+padding-top:2px;
+padding-bottom:2px;
+width: 32px;
+}
+
+br {
+margin-top:10px;
+}
+     
+     
+sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+
+
+pre {
+  font-size: 11px;
+    font-size-adjust:0.5;
+}
+
+
+.authorstable{
+font-size: 110%;
+
+
+}
+
+.section {
+max-width:900px
+}
+
+sub {
+  vertical-align: sub;
+  font-size: 20%;
+}
+
+
+#conference_title {
+color: #737373;
+}
+
+#bibtex {
+max-width:900px
+}
+</style>
+
+
+<title>An Efficient and Practical Near and Far Field Fur Reflectance Model</title>
+
+</head>
+<body alink="#4c80b2" link="#000064" text="#404040" vlink="#000064">
+
+
+
+
+<div style="max-width:1200px; margin: 0 auto;  margin-top: 60px; text-align: justify;">
+  <div style="text-align: center;max-width:950px;margin-left: auto;  margin-right: auto">
+    <h1>An Efficient and Practical Near and Far Field Fur Reflectance Model</h1>
+    <h2 id=conference_title>SIGGRAPH 2017</h2>
+    
+<div align="center"  class="authorstable">
+    <a href="https://sites.cs.ucsb.edu/~lingqi/">Ling-Qi Yan</a><sup >1</sup>&emsp;
+    <a href="http://graphics.ucsd.edu/~henrik/">Henrik Wann Jensen</a><sup>2</sup>&emsp;
+    <a href="http://cseweb.ucsd.edu/~ravir/">Ravi Ramamoorthi</a><sup>2</sup>&emsp;
+</div>
+
+    <br style="margin-top:0px;margin-bottom:0px;">
+    <sup>1</sup>University of California, Berkeley &emsp; <sup>2</sup>University of California, San Diego
+
+
+
+
+  </div>
+  <br>
+          <center><img src="img/teaser.jpg" border="0" align="center"  style=' width: 900px'/></center>
+          <br>
+  
+  <div style="margin-left: auto;  margin-right: auto " class="section">
+  <h2>Abstract</h2> 
+Physically-based fur rendering is difficult. Recently, structural differences between hair and fur fibers have been revealed by Yan et al. (2015), who showed that fur fibers have an inner scattering medulla, and developed a double cylinder model. However, fur rendering is still complicated due to the complex scattering paths through the medulla. We develop a number of optimizations that improve efficiency and generality without compromising accuracy, leading to a practical fur reflectance model. We also propose a key contribution to support both near and far-field rendering, and allow smooth transitions between them. Specifically, we derive a compact BCSDF model for fur reflectance with only 5 lobes. Our model unifies hair and fur rendering, making it easy to implement within standard hair rendering software, since we keep the traditional R, TTs, and TRTs lobes in hair, and only add two extensions to scattered lobes, TTs and TRTs. Moreover, we introduce a compression scheme using tensor decomposition to dramatically reduce the precomputed data storage for scattered lobes to only 150 KB, with minimal loss of accuracy. By exploiting piecewise analytic integration, our method further enables a multi-scale rendering scheme that transitions between near and far field rendering smoothly and efficiently for the first time, leading to 68X speed up over previous work.
+
+
+<br>
+<br>
+<br>
+
+
+
+  <h2>Download</h2>
+
+<a href="../../publications/paper_fur2.pdf" target="_blank">Paper</a> <br/>
+<a href="sup/fur2_code.zip" target="_blank">Code</a> <br/>
+
+<br/>					
+
+
+  <h2>Video</h2>
+  
+
+  <video  controls preload=metadata align="center" width=900px style="display:block    width:100%; height=550px">
+  <source src="sup/fur2.mp4" type="video/mp4">
+
+</video>
+
+<br/>	<br/>	
+<h2>Database</h2>
+<h3>1. Visualization Raw Reflectance data</h3>
+<p>Here is the visualization of the fitted reflectance data.</p>
+<p>Each link is a .txt file containing lines in the following format:</p>
+<p><b>phi</b> <b>theta</b> <b>value</b></p>
+<p>where theta and phi are longitudinal and azimuthal incident angles, respectively. Note that, both theta and phi are using coordinates of the gantry, where theta in [40, 80] maps to [50, 10] degrees and phi in [70, 290] maps to [-20, 200] degrees, following the notations in our paper. The  <a href="http://cseweb.ucsd.edu/~viscomp/projects/fur/index.html">previous work</a> contains the measured data. </p>
+<p>The plots show logarithm values.</p>
+<table>
+    <col width="100">
+    <col width="400">
+    <col width="100">
+    <col width="400">
+    
+    <tr>
+        <td align="center"><a href="file/BobcatFitted.txt" target="_blank">Bobcat</a></td>
+        <td align="center"><img src="img/bobcat.png" width="350" height="193"></td>
+        <td align="center"><a href="file/CatFitted.txt" target="_blank">Cat</a></td>
+        <td align="center"><img src="img/cat.png" width="350" height="193"></td>
+    </tr>
+    
+    <tr>
+        <td align="center"><a href="file/DeerFitted.txt" target="_blank">Deer</a></td>
+        <td align="center"><img src="img/deer.png" width="350" height="193"></td>
+        <td align="center"><a href="file/DogFitted.txt" target="_blank">Dog</a></td>
+        <td align="center"><img src="img/dog.png" width="350" height="193"></td>
+    </tr>
+    
+    <tr>
+        <td align="center"><a href="file/HumanFitted.txt" target="_blank">Human</a></td>
+        <td align="center"><img src="img/human.png" width="350" height="193"></td>
+        <td align="center"><a href="file/MouseFitted.txt" target="_blank">Mouse</a></td>
+        <td align="center"><img src="img/mouse.png" width="350" height="193"></td>
+    </tr>
+
+    <tr>
+        <td align="center"><a href="file/RaccoonFitted.txt" target="_blank">Raccoon</a></td>
+        <td align="center"><img src="img/raccoon.png" width="350" height="193"></td>
+        <td align="center"><a href="file/SpringbokFitted.txt" target="_blank">Sprningbok</a></td>
+        <td align="center"><img src="img/springbok.png" width="350" height="193"></td>
+    </tr>
+    
+    <tr>
+        <td align="center"><a href="file/RabbitFitted.txt" target="_blank">Rabbit</a></td>
+        <td align="center"><img src="img/rabbit.png" width="350" height="193"></td>
+    </tr>
+</table>
+<h3>2. Compressed Precomputed Scattering Profiles C<sup>N</sup> and C<sup>M</sup></h3>
+
+<p>Both C<sup>N</sup> and C<sup>M</sup> are 1D profiles for 3D sets of parameters, so they are essentially 4D tables. We provide the compressed pre-computed data here:</p>
+
+<p><a href="scatteringProfiles.zip" target="_blank">Download (148 KB)</a></p>
+
+<p>The precomputed longitudinal and azimuthal scattering profiles C<sup>M</sup> and C<sup>N</sup> are 4D tensors. We refer to tensor decomposition techniques to compress them. Here is a code snippet showing how to read the compressed scattering profiles and how to perform the tensor decomposition. The code should be very easy to understand. </p>
+
+<pre><code>
+// Number of bins
+#define NUM_SCATTERING_INNER 24
+#define NUM_H 16
+#define NUM_G 16
+#define NUM_BINS 720
+#define NUM_THETA 16
+
+// Storage
+float scattered[NUM_SCATTERING_INNER][NUM_H][NUM_G][NUM_BINS];
+float scatteredDist[NUM_SCATTERING_INNER][NUM_H][NUM_G][NUM_BINS];
+float scatteredM[NUM_SCATTERING_INNER][NUM_THETA][NUM_G][NUM_BINS];
+void initialize(const char *medullaFilename) {
+
+    size_t bytesRead;
+
+    // Read compressed scattering profiles.
+    FILE *fp = fopen(medullaFilename, "rb");
+
+    if (!fp) {
+        printf("Can't read precomputed scattering profiles!\n");
+        return;
+    }
+
+    // Azimuthal
+    float n1_lambda[16];
+    float n1_u0[23][16];
+    float n1_u1[16][16];
+    float n1_u2[16][16];
+    float n1_u3[720][16];
+
+    bytesRead = fread(n1_lambda, sizeof (float), 16, fp);
+    bytesRead = fread(n1_u0, sizeof (float), 23 * 16, fp);
+    bytesRead = fread(n1_u1, sizeof (float), 16 * 16, fp);
+    bytesRead = fread(n1_u2, sizeof (float), 16 * 16, fp);
+    bytesRead = fread(n1_u3, sizeof (float), 720 * 16, fp);
+
+    // Azimuthal Dist
+    float n2_lambda[16];
+    float n2_u0[23][16];
+    float n2_u1[16][16];
+    float n2_u2[16][16];
+    float n2_u3[720][16];
+
+    bytesRead = fread(n2_lambda, sizeof (float), 16, fp);
+    bytesRead = fread(n2_u0, sizeof (float), 23 * 16, fp);
+    bytesRead = fread(n2_u1, sizeof (float), 16 * 16, fp);
+    bytesRead = fread(n2_u2, sizeof (float), 16 * 16, fp);
+    bytesRead = fread(n2_u3, sizeof (float), 720 * 16, fp);
+
+    // Longitudinal (backward)
+    float m1_lambda[16];
+    float m1_u0[16][16];
+    float m1_u1[16][16];
+    float m1_u2[16][16];
+    float m1_u3[360][16];
+
+    bytesRead = fread(m1_lambda, sizeof (float), 16, fp);
+    bytesRead = fread(m1_u0, sizeof (float), 16 * 16, fp);
+    bytesRead = fread(m1_u1, sizeof (float), 16 * 16, fp);
+    bytesRead = fread(m1_u2, sizeof (float), 16 * 16, fp);
+    bytesRead = fread(m1_u3, sizeof (float), 360 * 16, fp);
+
+    // Longitudinal (backward)
+    float m2_lambda[16];
+    float m2_u0[16][16];
+    float m2_u1[16][16];
+    float m2_u2[16][16];
+    float m2_u3[359][16];
+
+    bytesRead = fread(m2_lambda, sizeof (float), 16, fp);
+    bytesRead = fread(m2_u0, sizeof (float), 16 * 16, fp);
+    bytesRead = fread(m2_u1, sizeof (float), 16 * 16, fp);
+    bytesRead = fread(m2_u2, sizeof (float), 16 * 16, fp);
+    bytesRead = fread(m2_u3, sizeof (float), 359 * 16, fp);
+
+    fclose(fp);
+
+    // Reconstruct the actual scattering profiles.
+    memset(scattered, 0, sizeof (float) * NUM_SCATTERING_INNER * NUM_H * NUM_G * NUM_BINS);
+    memset(scatteredDist, 0, sizeof (float) * NUM_SCATTERING_INNER * NUM_H * NUM_G * NUM_BINS);
+    memset(scatteredM, 0, sizeof (float) * 16 * NUM_THETA * NUM_G * NUM_BINS);
+
+    for (int i = 1; i < NUM_SCATTERING_INNER; i++)
+        for (int j = 0; j < NUM_H; j++)
+            for (int k = 0; k < NUM_G; k++)
+                for (int l = 0; l < NUM_BINS; l++)
+                    for (int t = 0; t < 16; t++) {
+                        scattered[i][j][k][l] += n1_lambda[t] * n1_u0[i - 1][t] * n1_u1[j][t] * n1_u2[k][t] * n1_u3[l][t];
+                        scatteredDist[i][j][k][l] += n2_lambda[t] * n2_u0[i - 1][t] * n2_u1[j][t] * n2_u2[k][t] * n2_u3[l][t];
+                    }
+
+    for (int i = 0; i < 16; i++)
+        for (int j = 0; j < NUM_THETA; j++)
+            for (int k = 0; k < NUM_G; k++) {
+                for (int l = 0; l < NUM_BINS / 2; l++)
+                    for (int t = 0; t < 16; t++)
+                        scatteredM[i][j][k][l] += m1_lambda[t] * m1_u0[i][t] * m1_u1[j][t] * m1_u2[k][t] * m1_u3[l][t];
+                for (int l = 0; l < NUM_BINS / 2 - 1; l++)
+                    for (int t = 0; t < 16; t++)
+                        scatteredM[i][j][k][l + NUM_BINS / 2 + 1] += m2_lambda[t] * m2_u0[i][t] * m2_u1[j][t] * m2_u2[k][t] * m2_u3[l][t];
+            }
+}</code></pre>
+<h3>3. Visualization of Scattering Profiles C<sup>N</sup> and C<sup>M</sup></h3>
+<p>
+The scattering coefficient changes with the scattering coefficient &sigma;, the anisotropy factor g, the azimuthal offset h (for C<sup>M</sup> only), and the longitudinal incident angle &theta; (for C<sup>N</sup> only). We provide a handy python program for the visualization of the scattering profiles:</p>
+<p><a href="visualofAL.zip" target="_blank">Download</a></p>
+<p>The following figures show the scattering profiles of C<sup>N</sup>.</p>
+ <table>
+    <col width="300">
+    <col width="300">
+    <col width="300">
+    
+    <tr>
+        
+        <td align="center"><img src="img/l0.png" width="260" height="255"></td>
+		<td align="center"><img src="img/l1.png" width="260" height="255"></td>
+		<td align="center"><img src="img/l2.png" width="260" height="255"></td>
+
+    </tr>
+    
+    <tr>
+        
+        <td align="center"><img src="img/l3.png" width="260" height="255"></td>
+		<td align="center"><img src="img/l4.png" width="260" height="255"></td>
+		<td align="center"><img src="img/l5.png" width="260" height="255"></td>
+    </tr>
+    
+    <tr>
+         
+        <td align="center"><img src="img/l6.png" width="260" height="255"></td>
+		<td align="center"><img src="img/l7.png" width="260" height="255"></td>
+		<td align="center"><img src="img/l8.png" width="260" height="255"></td>
+    </tr>
+
+   
+</table>
+
+<p>The following figures show the scattering profiles of C<sup>M</sup>.</p>
+ <table>
+    <col width="300">
+    <col width="300">
+    <col width="300">
+    
+    <tr>
+        
+        <td align="center"><img src="img/a0.png" width="260" height="255"></td>
+		<td align="center"><img src="img/a1.png" width="260" height="255"></td>
+		<td align="center"><img src="img/a2.png" width="260" height="255"></td>
+
+    </tr>
+    
+    <tr>
+        
+        <td align="center"><img src="img/a3.png" width="260" height="255"></td>
+		<td align="center"><img src="img/a4.png" width="260" height="255"></td>
+		<td align="center"><img src="img/a5.png" width="260" height="255"></td>
+    </tr>
+    
+    <tr>
+         
+        <td align="center"><img src="img/a6.png" width="260" height="255"></td>
+		<td align="center"><img src="img/a7.png" width="260" height="255"></td>
+		<td align="center"><img src="img/a8.png" width="260" height="255"></td>
+    </tr>
+
+   
+</table>
+<h2><span style="font-family: sans-serif">Bibtex</span> </h2>
+<pre id=bibtex> <span style="font-family: sans-serif">@article{yan2017efficient,
+  title={An Efficient and Practical Near and Far Field Fur Reflectance Model},
+  author={Yan, Ling-Qi and Jensen, Henrik Wann and Ramamoorthi, Ravi},
+  journal={ACM Transactions on Graphics (Proceedings of SIGGRAPH 2017)},
+  year={2017},
+  volume={36},
+  number={4},
+}
+</span>
+</pre>
+</div>
+</div>
+</body></html>

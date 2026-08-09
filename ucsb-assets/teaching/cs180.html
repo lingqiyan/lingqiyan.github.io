@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CS180: Introduction to Computer Graphics</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="../css/portfolio-item.css" rel="stylesheet"> -->
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+    <link rel="icon" href="../images/eye-regular.png">
+
+  </head>
+
+  <body>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <h1 class="my-3">CS180 / CS280: Introduction to Computer Graphics</h1>
+      <h4 class="my-3">Fall 2024</h4>
+
+      <hr class="style-two">
+      <h5 class="my-3">Important Note</h5>
+      <p>Due to the similarity of contents between CS180 and previous iterations of CS280, from winter 2021, CS280 will be co-listed with CS180. Now CS280 has exactly the same content and grading rubrics as CS180. It is NOT an advanced / complementary version of CS180, but is just for graduate students to enroll. Meanwhile, the CS180 course remains unchanged (except adjustments and improvements by the instructor).</p>
+      <p>Therefore, if you have taken CS180 before, you cannot take CS280 again.</p>
+
+      <hr class="style-two">
+      <h5 class="my-3">Course Description</h5>
+      <img class="img-responsive" style="width:100%;height:100%" src="../images/cs180.png">
+      <div class="row justify-content-md-center">
+        <div class="col-md-3 mb-3">
+          <center><small>[Shadows Demo by NVIDIA]</small></center>
+        </div>
+        <div class="col-md-3 mb-3">
+          <center><small>[Pen Tool in Adobe Photoshop]</small></center>
+        </div>
+        <div class="col-md-3 mb-3">
+          <center><small>[Whitted Style Ray Tracing]</small></center>
+        </div>
+        <div class="col-md-3 mb-3">
+          <center><small>[Fluid Simulation by Muller et al.]</small></center>
+        </div>
+      </div>
+
+      <p>This course is an introduction to the foundations of three-dimensional computer graphics. Topics covered include 2D and 3D transformations, Rasterization based interactive 3D graphics, shading and reflectance models, texture mapping, geometric modeling using Bézier and B-Spline curves, ray tracing, and animation. There will be an emphasis on both the mathematical and geometric aspects of graphics, as well as the ability to write fully functional 3D graphics programs.</p>
+
+      <p>Pre-requisites for the course:<br>
+      Linear algebra, 
+      C++ Programming, 
+      Algorithm, 
+      Data Structure
+      <p>
+
+      <hr class="style-two">
+      <h5 class="my-3">Instructor's Announcement</h5>
+
+      <p>Welcome to the CS180, Introduction to Computer Graphics! In this course, you will learn almost everything about MODERN topics in Computer Graphics. You don't have to write any GPU code, such as OpenGL and its shading language GLSL, so you can focus on the ideas and algorithms rather than painful GPU implementation and debugging. That being said, we do require C++ programming, which is difficult to replace for its high performance and handy libraries.</p>
+
+      <p>We are also aware that not all the students are clear what this course is about. Mostly, there's confusion between this Computer Graphics course and other Computer Vision courses. We suggest that you read the syllabus below, to find whether this is the course that you are looking for. Basically, this course does not involve any "guesses", so it is not related to Machine Learning and Data Science. It is about understanding the mechanics that the real world and the computers generate and represent visual information. This course is not about how to use tools to create 3D scenes like an artist either, but it will tell you the science behind these tools to make animations and movies.</p>
+
+      <p>If you already have some Computer Graphics background in general, and you want to learn more about rendering, <a href="cs292f.html" target="_blank">CS292F</a> and <a href="cs190I.html" target="_blank">CS190I</a> are what you need.</p>
+<!-- 
+      <hr class="style-two">
+      <h5 class="my-3">Road Work Ahead</h5>
+      <p><b><FONT COLOR="RED">The rest of this web page is from the previous iteration. New contents are being constructed actively.</FONT></b></p> -->
+
+      <hr class="style-two">
+      <h5 class="my-3">Instructor</h5>
+      <p><a href="../index.html" target="_blank">Lingqi Yan</a><br>
+         Email: <a href="mailto:lingqi@cs.ucsb.edu" target="_top">lingqi@cs.ucsb.edu</a><br>
+         <!-- Office hour: TBD</p> -->
+         <!-- Office hour: Tuesdays 2:00 PM - 2:45 PM (PT), HFH 2119 -->
+       </p>
+
+      <hr class="style-two">
+      <h5 class="my-3">Teaching Assistants</h5>  
+      
+      <p>Zheng Zeng<br>
+        Email: <a href="mailto:zhengzeng@ucsb.edu" target="_top">zhengzeng@ucsb.edu</a><br>
+        Office hour: Thursdays 3:05 PM - 4:00 PM (PT), HFH 5106</p>
+        <!-- Office hour: TBD</p> -->
+      
+      <p>Chuyan Zhang<br>
+        Email: <a href="mailto:chuyan@ucsb.edu" target="_top">chuyan@ucsb.edu</a><br>
+        Office hour: Tuesdays 2:05 PM - 3:00 PM (PT), HFH 5106</p>
+        <!-- Office hour: TBD</p> -->
+
+      <h5 class="my-3">Grader</h5>  
+      
+      <p>Shaokang Li<br>
+        Email: <a href="mailto:shaokang@ucsb.edu" target="_top">shaokang@ucsb.edu</a><br>
+        Reach out ONLY to the grader for score related questions (regrading, explanations, etc.)</p>
+        <!-- Office hour: TBD</p> -->
+      
+      <hr class="style-two">
+      <h5 class="my-3">Time and Location</h5>
+      <p>
+         <b>Lectures</b>:<br>
+         Tuesdays and Thursdays<br>
+         9:30 AM - 10:45 AM (PT), PSYCH 1924<br>
+      </p>
+      <p>
+         <b>Discussion Sections</b>:<br>
+         Wednesdays<br>
+         4:00 PM - 4:50 PM (PT), PHELP 1444<br>
+         5:00 PM - 5:50 PM (PT), PHELP 1440<br>
+      </p>
+
+      <hr class="style-two">
+      <h5 class="my-3">Books Recommended</h5>
+      <p>There are no required textbooks for this course. The lecture slides and discussion materials will be your main references. Other related reading materials will be available to access from this course website before lectures.
+      </p>
+      <p>Optional references:<br>
+        Steve Marschner and Peter Shirley, "<a href="https://www.amazon.com/Fundamentals-Computer-Graphics-Steve-Marschner/dp/1482229390/ref=sr_1_1?keywords=Fundamentals+of+Computer+Graphics&qid=1553663094&s=books&sr=1-1" target="_blank">Fundamentals of Computer Graphics</a>", 3rd or later edition. (Recommended as "Reading" of each lecture. Electronic version of the 5th edition is available via UCSB library.)<br>
+        Tomas Akenine-Möller et al., "<a href="https://www.amazon.com/Real-Time-Rendering-Fourth-Tomas-Akenine-M%C3%B6ller/dp/1138627003/ref=sr_1_3?ie=UTF8&qid=1546454695&sr=8-3&keywords=real+time+rendering" target="_blank">Real-Time Rendering</a>", 3rd or later edition. <br>
+      </p>
+
+      <hr class="style-two">
+      <h5 class="my-3">Assignments and Grading</h5>
+      <p>We'll use <b>Canvas</b> for submission, grading and discussion!</p>
+      <p>
+        Your assignments are weekly, all programming tasks. We have optimized your implementation workload, so you are usually expected to write NO MORE THAN 20 LINES OF CODE per week. Besides, we provide code skeleton for each assignment.
+      </p>
+      <p>
+        All assignments are due by 11:59PM PT on the dates specified. You should plan ahead. Each late day will cause a 10% off the final score  subtracted from the corresponding assignment. We will use Canvas for submissions. Detailed submission guidelines will be in the assignment descriptions.
+      </p>
+      <p>
+        You will work on the assignments individually. Each assignment takes 8% of your final grade.</p>
+      <p>
+        There will be one midterm exam and one final exam. Both exams are in written form and will be taken in person (detail TBD as the quarter proceeds). Each exam takes up 18% of your final grade. And the contents of the two exams will not overlap.</p>
+      <p>
+        There will be no final projects of this course. However, in case of an unexpected shutdown, the exams may have to be canceled. We will replace any missing exam(s) with a final project. You will be working on this project individually. And the topic of the project can be arbitrarily selected from all the topics covered in this course.
+      </p>
+
+      <hr class="style-two">
+      <h5 class="my-3">Course Syllabus</h5>
+      <p>Here's a tentative schedule. It is relatively fluid and may change (quite frequently) as the quarter progresses.</p>
+
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Week</th>
+            <th scope="col">Date</th>
+            <th scope="col">Topics</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Sep 26</td>
+            <td><b>Overview of Computer Graphics</b>
+            [<a href="https://ucsb.box.com/s/8hdzqwrhqpu1333qo9ddudd331xepoiw" target="_blank">Slides</a>]
+            </td>
+          </tr>
+
+          <tr>
+            <td rowspan="2">2</td>
+            <td>Oct 1</td>
+            <td><b>Vectors and Linear Algebra</b>
+            [<a href="https://ucsb.box.com/s/25yp2pfvlqeavgh049qnzsy3mtxbliqn" target="_blank">Slides</a>]
+            <br>Reading: Chapter 2 (Miscellaneous Math) and Chapter 5 (Linear Algebra)
+            </td>
+          </tr>
+          <tr>
+            <td>Oct 3</td>
+            <td><b>Transformation 1 (2D Transformations)</b>
+            [<a href="https://ucsb.box.com/s/uxfg3piuvyrzey71nm2appgb4suvql8n" target="_blank">Slides</a>]
+            <br>Reading: Chapter 6 (Transformation Matrices), Sections 6.1 and 6.3
+            </td>
+          </tr>
+
+          <tr>
+            <td rowspan="2">3</td>
+            <td>Oct 8</td>
+            <td><b>Transformation 2 (3D Transformations and Viewing)</b>
+            [<a href="https://ucsb.box.com/s/zbzzgqp932ob6mevsku5ojlsnr1dndhn" target="_blank">Slides</a>]
+            [<a href="https://ucsb.box.com/s/609bccoqasw5cemhmqu0tcyf5ufzzl4a" target="_blank">Supp</a>]
+            <br>Reading: Chapter 6 (Transformation Matrices), Sections 6.2, 6.4 and 6.5;<br>Chapter 7 (Viewing), Sections 7.1 and 7.2
+            </td>
+          </tr>
+          <tr>
+            <td>Oct 10</td>
+            <td><b>Transformation 3 (Projection)</b>
+            [<a href="https://ucsb.box.com/s/iw0obhn8nyb3jm4amogqe11nak1xfbjf" target="_blank">Slides</a>]
+            <br>Reading: Chapter 7 (Viewing)
+            </td>
+          </tr>
+
+          <tr>
+            <td rowspan="2">4</td>
+            <td>Oct 15</td>
+            <td><b>Rasterization 1 (Raster Devices and Sampling)</b>
+            [<a href="https://ucsb.box.com/s/cp4r6ets8fppdwnd1h7s2z3qj6y20bru" target="_blank">Slides</a>]
+            <br>Reading: Chapter 3 (Raster Images), Sections 3.1 and 3.2;<br>Chapter 7 (Viewing), Section 7.1.1; Chapter 8 (The Graphics Pipeline), Section 8.1
+            </td>
+          </tr>
+          <tr>
+            <td>Oct 17</td>
+            <td><b>Rasterization 2 (Antialiasing and Z-Buffering)</b>
+            [<a href="https://ucsb.box.com/s/ih90xoiuhw0ij5j5my003vq729ozfxa2" target="_blank">Slides</a>]
+            <br>Reading: Chapter 8 (The Graphics Pipeline), Sections 8.2 and 8.3
+            </td>
+          </tr>
+
+          <tr>
+            <td rowspan="2">5</td>
+            <td>Oct 22</td>
+            <td><b>Shading 1 (Illumination and Blinn-Phong Model)</b>
+            [<a href="https://ucsb.box.com/s/9t6ste0gjwiiqzpdkwtamiyyat3c9d6v" target="_blank">Slides</a>]
+            <br>Reading: Chapter 10 (Surface Shading), Sections 10.1 and 10.2
+            </td>
+          </tr>
+          <tr>
+            <td>Oct 24</td>
+            <td><b>Shading 2 (Graphics Pipeline and Texture Mapping)</b>
+            [<a href="https://ucsb.box.com/s/k3lybnh16hp5tb572ll37086ggsu9a4j" target="_blank">Slides</a>]
+            <br>Reading: Chapter 11 (Texture Mapping), Sections 11.1 and 11.2
+            </td>
+          </tr>
+
+          <tr>
+            <td rowspan="2">6</td>
+            <td>Oct 29</td>
+            <td><b>Shading 3 (Texture Mapping cont. and Applications)</b>
+            [<a href="https://ucsb.box.com/s/hel3zzf8y1eywkk2o396r1yl8uga1wnz" target="_blank">Slides</a>]
+            <br>Reading: Chapter 11 (Texture Mapping), Sections 11.3 and 11.4
+            </td>
+          </tr>
+          <tr>
+            <td>Oct 31</td>
+            <td><b>Midterm Exam (in class)</b>
+            </td>
+          </tr>
+
+          <tr>
+            <td rowspan="2">7</td>
+            <td>Nov 5</td>
+            <td><b>Geometry 1 (Introduction and Representation)</b>
+            [<a href="https://ucsb.box.com/s/r1atbszle96fnwfxrp028ofqe4vx9dvy" target="_blank">Slides</a>]
+            <br>Reading: N/A
+            </td> 
+          </tr>
+          <tr>
+            <td>Nov 7</td>
+            <td><b>Geometry 2 (Curves and Splines)</b>
+            [<a href="https://ucsb.box.com/s/83kfp7sfj7jzs174jydyk7mdhxyunu2h" target="_blank">Slides</a>]
+            <br>Reading: Chapter 15 (Curves), Sections 15.1, 15.2, 15.3
+            </td>
+          </tr>
+
+          <tr>
+            <td rowspan="2">8</td>
+            <td>Nov 12</td>
+            <td><b>Geometry 3 (Surfaces)</b>
+            [<a href="https://ucsb.box.com/s/onwlwvhv2q9ww13zu24ja6fbo4uo1lt3" target="_blank">Slides</a>]
+            <br>Reading: N/A
+            </td>
+          </tr>
+          <tr>
+            <td>Nov 14</td>
+            <td><b>Ray Tracing 1 (Introduction)</b>
+            [<a href="https://ucsb.box.com/s/0t4ft4yq7821kj4u6flnsrgajmu5pxoa" target="_blank">Slides</a>]
+            <br>Reading: Chapter 4 (Ray Tracing)
+            </td>            
+           </tr>
+
+          <tr>
+            <td rowspan="2">9</td>
+            <td>Nov 19</td>
+            <td><b>Ray Tracing 2 (Acceleration)</b>
+            [<a href="https://ucsb.box.com/s/hjn5ptkkpkgspoiwxwjlf587tnmnojef" target="_blank">Slides</a>]
+            <br>Reading: Chapter 12 (Data Structures for Graphics), Sections 12.1 to 12.3
+            </td>
+          </tr>
+          <tr>
+            <td>Nov 21</td>
+            <td><b>Animation 1 (Introduction and Mass Spring System)</b>
+            [<a href="https://ucsb.box.com/s/bbr444vjju8i9dhkqu7bjrhbbmb8o52u" target="_blank">Slides</a>]
+            <br>Reading: Chapter 16 (Computer Animation), Sections 16.1, 16.2
+            </td>
+          </tr>
+
+          <tr>
+            <td rowspan="2">10</td>
+            <td>Nov 26</td>
+            <td><b>Animation 2 (Simulation and Kinematics)</b>
+            [<a href="https://ucsb.box.com/s/0atwsitizt22g3zbfei15matxyz28pu8" target="_blank">Slides</a>]
+            <br>Reading: Chapter 16 (Computer Animation), Section 16.5
+            </td>
+          </tr>
+          <tr>
+            <td>Nov 28</td>
+            <td><b>No Class (Thanksgiving)</b>
+            </td>
+          </tr>
+
+          <tr>
+            <td rowspan="2">11</td>
+            <td>Dec 3</td>
+            <td><b>Color</b>
+            [<a href="https://ucsb.box.com/s/owg4h4taqv5hyn04nl2rvj59fmko9prf" target="_blank">Slides</a>]
+            <br>Reading: N/A
+            </td>
+          </tr>
+          <tr>
+            <td>Dec 5</td>
+            <td><b>Final Exam (in class)</b>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <hr class="style-two">
+      <h5 class="my-3">Programming and Collaboration Policy</h5>
+      <p>
+        Programming projects are to be implemented individually from scratch. That is, you should not derive solutions from existing sources or previous instances of this course (including previous postings from the online course, at other universities etc.). Discussion of programming projects is allowed and encouraged, but copying of solutions or code from other students, or from students who previously took this course in any university or online setting is not allowed. If you do obtain substantial help from the instructor, teaching assistant/tutor or another student, you must document this in your program. Furthermore, you should in general not copy code from other sources. If in doubt, please ask. Further specifics are given in the assignment specifications.
+      </p><p>
+        To repeat, you may not copy solutions or code from other students, or students who previously took this or a similar class at a university or online. You must clearly declare any code and ideas that came directly from others, as opposed to what you created yourself. If you fail to do so, we can only assume you are presenting your own work. Of course, presenting other people's work as your own is academic dishonesty. Students who engage in dishonest activities, with an intent to alter their grade, will receive an F for the course and be reported to the University for further action. Note that you will also be held liable for publicly posting your code on Github or other public websites, if another student subsequently copies from it.
+      </p>
+
+      <hr class="style-two">
+      <h5 class="my-3">Accessibility</h5>
+      <p>
+        Students with documented disability are welcome to contact the <a href="http://dsp.sa.ucsb.edu/" target="_blank">DSP office</a> to arrange the necessary academic accommodations. We will also spare no efforts to help.
+      </p>
+
+
+
+<!-- 
+
+Please read this section carefully.
+
+The university, the department, and this instructor all take the issue of academic integrity very seriously. A university requires an atmosphere of mutual trust and respect. While collaboration is an integral part of many scholarly activities, it is not always appropriate in a course, and it is never appropriate unless due credit is given to all participants in the collaboration. This goes for both ideas and programming or other work.
+
+Here are some examples:
+
+Allowed: Discussion of lecture and textbook materials
+Allowed: Discussion of how to approach assignments, what techniques to consider, what textbook or lecture material is relevant
+Not allowed: Sharing ideas in the form of code, pseudocode, or solutions
+Not allowed: Turning in someone else's work as your own, even with that person's permission.
+Not allowed: Allowing someone else to turn in your work as his or her own.
+Not allowed: Turning in work without proper acknowledgment of the sources of the content (including ideas) contained within the work.
+For some views on academic integrity at UCSB see the Academic Integrity page of the Office of Judicial Affairs.
+
+Summary: Academic integrity is absolutely required - dishonesty (cheating, plagiarism, etc.) benefits no one and hurts everyone. If you are not sure whether or not something is appropriate, ask the instructor or the TA. -->
+
+<!-- 
+Students with Disabilities
+
+If you are a student with a (temporary or permanent) disability and would like to discuss special academic accommodations, please first contact the Disabled Students Program (DSP) at UCSB. DSP will arrange for special services when appropriate (e.g., facilitation of access, note takers, readers, sign language interpreters). Please note that it is the student's responsibility to communicate his or her special needs to the instructor, along with a letter of verification from DSP. The instructor will be happy to make the appropriate accommodations once you work out the details with DSP; also, feel free to communicate these needs to the instructor while waiting for DSP to finalize their response.
+
+
+Accessibility
+Students with documented disability are asked to contact the DSP office to arrange the necessary academic accommodations.
+
+
+ -->
+
+    <!-- /.container -->
+
+<!--     <footer class="py-3 bg-jilaozi">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Lingqi Yan 2018</p>
+      </div>
+    </footer>
+ -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>
