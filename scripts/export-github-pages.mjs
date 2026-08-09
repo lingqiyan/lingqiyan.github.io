@@ -24,6 +24,23 @@ html = html
 await writeFile(path.join(output, "index.html"), html);
 await writeFile(path.join(output, ".nojekyll"), "");
 
+try {
+  const manifest = await readFile(path.join(root, "migration", "ucsb-assets.tsv"), "utf8");
+  const repository = "lingqiyan/lingqiyan.github.io";
+  for (const line of manifest.trim().split("\n")) {
+    const [kind, source, destination] = line.split("\t");
+    const replacement = kind === "release"
+      ? `https://github.com/${repository}/releases/download/ucsb-archive/${encodeURIComponent(destination)}`
+      : kind === "repo"
+        ? `/${destination}`
+        : destination;
+    html = html.replaceAll(source, replacement);
+  }
+  await writeFile(path.join(output, "index.html"), html);
+} catch (error) {
+  if (error?.code !== "ENOENT") throw error;
+}
+
 const localAssets = new Set(
   [...html.matchAll(/(?:src|href)="\/(?!\/)([^"?#]+)/g)].map((match) => match[1]),
 );

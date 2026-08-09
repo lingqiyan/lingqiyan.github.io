@@ -1,0 +1,86 @@
+name: Mirror UCSB assets
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/mirror-ucsb-assets.yml
+      - migration/ucsb-assets.tsv
+      - scripts/migrate-ucsb-release-shard.sh
+      - scripts/rewrite-ucsb-links.mjs
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  UCSB_RELEASE_TAG: ucsb-archive
+
+jobs:
+  prepare-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create archive release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view "$UCSB_RELEASE_TAG" >/dev/null 2>&1 || \
+            gh release create "$UCSB_RELEASE_TAG" --target main \
+              --title "Archived UCSB website materials" \
+              --notes "Files mirrored directly from the former UCSB homepage so the new website no longer depends on that server."
+
+  mirror-site-assets:
+    needs: prepare-release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Download non-publication assets
+        run: |
+          awk -F '\t' '$1 == "repo" { print $2 "\t" $3 }' migration/ucsb-assets.tsv |
+          while IFS=$'\t' read -r url destination; do
+            mkdir -p "$(dirname "$destination")"
+            curl --fail --location --retry 4 --retry-all-errors --connect-timeout 30 \
+              --output "$destination" "$url"
+          done
+      - name: Commit mirrored site assets
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add -- ucsb-assets
+          git diff --cached --quiet || git commit -m "Mirror UCSB site assets"
+          git push origin HEAD:main
+
+  mirror-publications:
+    needs: prepare-release
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Upload publication archive shard
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash scripts/migrate-ucsb-release-shard.sh migration/ucsb-assets.tsv ${{ matrix.shard }} 8
+
+  finalize-links:
+    needs: [mirror-site-assets, mirror-publications]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Replace UCSB links
+        run: node scripts/rewrite-ucsb-links.mjs migration/ucsb-assets.tsv index.html
+      - name: Commit independent website
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add -- index.html
+          git diff --cached --quiet || git commit -m "Replace UCSB links with GitHub archive"
+          git push origin HEAD:main
