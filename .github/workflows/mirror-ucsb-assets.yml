@@ -60,7 +60,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shard: [0]
+        shard: [0, 1, 2, 3]
     steps:
       - uses: actions/checkout@v4
       - name: Upload publication archive shard
