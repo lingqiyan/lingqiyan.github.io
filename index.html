@@ -161,7 +161,7 @@ body > .container::before {
 [class*="col-"] { padding-left: 8px !important; padding-right: 8px !important; }
 body > .container > .row:first-of-type {
   display: grid !important;
-  grid-template-columns: minmax(240px, 270px) minmax(400px, 1.35fr) minmax(240px, .65fr);
+  grid-template-columns: minmax(240px, 270px) minmax(400px, 1.2fr) minmax(240px, .8fr);
   align-items: stretch; gap: 0;
   margin: 0 0 10px !important; padding: 0 !important;
   background: linear-gradient(115deg, rgba(42,71,94,.96), rgba(27,40,56,.86) 66%, rgba(19,32,45,.92));
@@ -318,14 +318,16 @@ span[style*="background-color: #ffffff"],
 span[style*="background-color:#ffffff"],
 span[style*="background-color: white"],
 span[style*="background-color:white"] {
-  display: inline-block;
-  padding: 2px 7px !important;
+  display: inline;
+  padding: 0 4px !important;
   color: #67c1f5 !important;
   background: linear-gradient(90deg, rgba(26,159,255,.18), rgba(42,71,94,.42)) !important;
-  border: 1px solid rgba(102,192,244,.28);
+  border: 0;
   border-radius: 2px;
-  box-shadow: inset 0 0 10px rgba(102,192,244,.06);
-  line-height: 1.35;
+  box-shadow: inset 0 0 0 1px rgba(102,192,244,.28), inset 0 0 10px rgba(102,192,244,.06);
+  line-height: inherit;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 span[style*="background-color: #ffffff"] b,
 span[style*="background-color:#ffffff"] b,
