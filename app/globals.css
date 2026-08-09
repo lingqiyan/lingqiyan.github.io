@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+:root { color-scheme: dark; }
+
+* { box-sizing: border-box; }
+
+html, body, .site-shell { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+
+body { background: #171d25; }
+
+.research-page { display: block; width: 100%; height: 100%; border: 0; background: #1b2838; }
