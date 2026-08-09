@@ -25,13 +25,18 @@
 <style id="steam-inspired-redesign">
 @font-face {
   font-family: "Barlow Steamlike";
-  src: url("/fonts/barlow-regular.ttf") format("truetype");
+  src: url("/fonts/barlow-medium.ttf") format("truetype");
   font-weight: 400; font-style: normal; font-display: swap;
 }
 @font-face {
   font-family: "Barlow Steamlike";
   src: url("/fonts/barlow-medium.ttf") format("truetype");
   font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Barlow Steamlike";
+  src: url("/fonts/barlow-medium.ttf") format("truetype");
+  font-weight: 600 800; font-style: normal; font-display: swap;
 }
 @font-face {
   font-family: "Barlow Steamlike Display";
@@ -2561,6 +2566,54 @@ hr.style-two {
 </div>
 <script id="publication-year-tabs">
 document.addEventListener("DOMContentLoaded", function () {
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll(".navbar-nav .nav-link"));
+  var trackedSections = navLinks.map(function (link) {
+    var href = link.getAttribute("href") || "";
+    var name = href.slice(1);
+    return {
+      link: link,
+      item: link.closest(".nav-item"),
+      target: name ? document.querySelector('a.anchor[name="' + name + '"]') || document.getElementById(name) : document.body
+    };
+  }).filter(function (entry) { return entry.target; });
+
+  function activateNavigation(link) {
+    trackedSections.forEach(function (entry) {
+      var active = entry.link === link;
+      if (entry.item) entry.item.classList.toggle("active", active);
+      if (active) entry.link.setAttribute("aria-current", "page");
+      else entry.link.removeAttribute("aria-current");
+      var currentLabel = entry.link.querySelector(".sr-only");
+      if (currentLabel) currentLabel.hidden = !active;
+    });
+  }
+
+  function updateNavigationFromScroll() {
+    var navbar = document.querySelector(".navbar");
+    var probe = window.scrollY + (navbar ? navbar.offsetHeight : 54) + 24;
+    var current = trackedSections[0];
+    trackedSections.forEach(function (entry) {
+      var top = entry.target === document.body ? 0 : entry.target.getBoundingClientRect().top + window.scrollY;
+      if (top <= probe) current = entry;
+    });
+    if (current) activateNavigation(current.link);
+  }
+
+  navLinks.forEach(function (link) {
+    link.addEventListener("click", function () { activateNavigation(link); });
+  });
+  var scrollTicking = false;
+  window.addEventListener("scroll", function () {
+    if (scrollTicking) return;
+    scrollTicking = true;
+    window.requestAnimationFrame(function () {
+      updateNavigationFromScroll();
+      scrollTicking = false;
+    });
+  }, { passive: true });
+  window.addEventListener("hashchange", updateNavigationFromScroll);
+  updateNavigationFromScroll();
+
   var navContainer = document.querySelector(".navbar > .container");
   if (navContainer) {
     var cart = document.createElement("button");

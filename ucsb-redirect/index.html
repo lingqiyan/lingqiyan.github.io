@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lingqi Yan — Website Moved</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #192533;
+      color: #d6d7d8;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background:
+        radial-gradient(circle at 50% 25%, rgba(42, 102, 137, 0.3), transparent 42%),
+        linear-gradient(180deg, #1b2838 0%, #17202c 100%);
+    }
+
+    main {
+      width: min(620px, 100%);
+      padding: 34px 38px 38px;
+      border: 1px solid rgba(103, 193, 245, 0.2);
+      border-top: 3px solid #1a9fff;
+      background: linear-gradient(135deg, rgba(36, 55, 75, 0.96), rgba(24, 36, 49, 0.96));
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.38);
+    }
+
+    .label {
+      margin: 0 0 12px;
+      color: #66c0f4;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0 0 13px;
+      color: #ffffff;
+      font-size: clamp(30px, 6vw, 44px);
+      line-height: 1.06;
+      letter-spacing: -0.025em;
+    }
+
+    p {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 24px;
+      padding: 11px 18px;
+      border-radius: 2px;
+      color: #ffffff;
+      font-size: 17px;
+      font-weight: 700;
+      text-decoration: none;
+      background: linear-gradient(90deg, #47bfff 0%, #1a9fff 100%);
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+      transition: filter 150ms ease, transform 150ms ease;
+    }
+
+    a::after {
+      content: "→";
+      margin-left: 10px;
+    }
+
+    a:hover,
+    a:focus-visible {
+      filter: brightness(1.12);
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 520px) {
+      main { padding: 28px 24px 30px; }
+      p { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="label">Website moved</p>
+    <h1>This website is no longer in use.</h1>
+    <p>Please visit my new website:</p>
+    <a href="https://lingqiyan.github.io/">lingqiyan.github.io</a>
+  </main>
+</body>
+</html>
