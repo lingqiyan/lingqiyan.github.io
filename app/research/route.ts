@@ -50,7 +50,7 @@ body {
     radial-gradient(circle at 15% 0%, rgba(46, 98, 136, .26), transparent 30rem),
     linear-gradient(180deg, #1b2838 0%, #192635 58%, #17202d 100%) fixed !important;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
-  font-size: 14px !important;
+  font-size: 13px !important;
   line-height: 1.42 !important;
   font-weight: 500;
   font-kerning: normal;
@@ -134,7 +134,7 @@ body::before {
 .container { max-width: 1120px !important; }
 body > .container { padding-top: 14px; padding-bottom: 26px; }
 body > .container::before {
-  content: "MOHAMED BIN ZAYED UNIVERSITY OF ARTIFICIAL INTELLIGENCE  ·  COMPUTING AND MATHEMATICAL SCIENCES DIVISION  ·  COMPUTER SCIENCE  ·  COMPUTER GRAPHICS";
+  content: "MOHAMED BIN ZAYED UNIVERSITY OF ARTIFICIAL INTELLIGENCE  ·  COMPUTING AND MATHEMATICAL SCIENCES DIVISION  ·  COMPUTER SCIENCE";
   display: block; margin: 0 0 10px; color: #67c1f5; font-size: 11px;
   letter-spacing: .11em; text-shadow: 0 0 12px rgba(102,192,244,.32);
 }
@@ -142,7 +142,7 @@ body > .container::before {
 [class*="col-"] { padding-left: 8px !important; padding-right: 8px !important; }
 body > .container > .row:first-of-type {
   display: grid !important;
-  grid-template-columns: minmax(240px, 270px) minmax(360px, .95fr) minmax(300px, 1.05fr);
+  grid-template-columns: minmax(240px, 270px) minmax(400px, 1.35fr) minmax(240px, .65fr);
   align-items: stretch; gap: 0;
   margin: 0 0 10px !important; padding: 0 !important;
   background: linear-gradient(115deg, rgba(42,71,94,.96), rgba(27,40,56,.86) 66%, rgba(19,32,45,.92));
@@ -179,7 +179,7 @@ body > .container > .row:first-of-type > .col-md-4 h3 {
 }
 body > .container > .row:first-of-type > .col-md-4 h3 small {
   display: block; margin-top: 26px; color: #8f98a0 !important;
-  font-size: 14px; font-weight: 600; line-height: 1.38;
+  font-size: 14px; font-weight: 600; line-height: 1.38; letter-spacing: 0;
 }
 body > .container > .row:first-of-type > .col-md-4 p {
   margin-bottom: 9px !important; color: #c7d5e0; font-size: 12px; font-weight: 500; line-height: 1.5 !important;
@@ -802,7 +802,7 @@ function makeAbsolute(document: string, localOrigin: string) {
     .replace(
       /<h3 class="my-3">A Short Bio<\/h3>\s*<p>[\s\S]*?<\/p>\s*<a class="anchor" name="research"><\/a>/,
       `<h3 class="my-3">A Short Bio</h3>
-      <p>Professor Lingqi Yan is an Associate Professor of Computer Science at Mohamed bin Zayed University of Artificial Intelligence (MBZUAI). His research focuses on photorealistic rendering, including appearance modeling and representation, physical light transport theory, neural-aided rendering, and practical real-time ray tracing techniques. He received the 2019 ACM SIGGRAPH Outstanding Doctoral Dissertation Award and multiple best paper awards. His research has been widely adopted in industry and has contributed to multiple films that won the Academy Award for Best Visual Effects. He has also been serving on the editorial board of IEEE Transactions on Visualization and Computer Graphics (TVCG).</p>
+      <p>Professor Lingqi Yan is an Associate Professor of Computer Science at Mohamed bin Zayed University of Artificial Intelligence (MBZUAI). His research focuses on photorealistic rendering in computer graphics, including appearance modeling and representation, physical light transport theory, neural-aided rendering, and practical real-time ray tracing techniques. He received the 2019 ACM SIGGRAPH Outstanding Doctoral Dissertation Award and multiple best paper awards. His research has been widely adopted in industry and has contributed to multiple films that won the Academy Award for Best Visual Effects. He has also been serving on the editorial board of IEEE Transactions on Visualization and Computer Graphics (TVCG).</p>
 
       <a class="anchor" name="research"></a>`,
     )
