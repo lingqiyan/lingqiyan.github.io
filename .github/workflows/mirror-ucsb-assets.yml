@@ -60,13 +60,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+        shard: [0, 1, 2, 3]
     steps:
       - uses: actions/checkout@v4
       - name: Upload publication archive shard
         env:
           GH_TOKEN: ${{ github.token }}
-        run: bash scripts/migrate-ucsb-release-shard.sh migration/ucsb-assets.tsv ${{ matrix.shard }} 8
+        run: bash scripts/migrate-ucsb-release-shard.sh migration/ucsb-assets.tsv ${{ matrix.shard }} 4
 
   finalize-links:
     needs: [mirror-site-assets, mirror-publications]
