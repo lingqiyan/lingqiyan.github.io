@@ -1,3 +1,5 @@
+import originalSnapshot from "../../source-snapshot/ucsb-original.html?raw";
+
 const SOURCE = "https://sites.cs.ucsb.edu/~lingqi/";
 
 const theme = `
@@ -803,17 +805,20 @@ function makeAbsolute(document: string, localOrigin: string) {
 }
 
 export async function GET(request: Request) {
+  let sourceHtml = originalSnapshot;
   try {
     const response = await fetch(SOURCE, { headers: { "User-Agent": "Mozilla/5.0" }, next: { revalidate: 3600 } });
     if (!response.ok) throw new Error(`Source returned ${response.status}`);
-    const html = makeAbsolute(await response.text(), new URL(request.url).origin);
-    return new Response(html, {
-      headers: {
-        "Content-Type": "text/html; charset=utf-8",
-        "Cache-Control": "public, max-age=900, s-maxage=3600",
-      },
-    });
+    sourceHtml = await response.text();
   } catch {
-    return new Response("Unable to load the original research homepage.", { status: 502 });
+    // The repository snapshot keeps the editable site usable if UCSB is unavailable.
   }
+
+  const html = makeAbsolute(sourceHtml, new URL(request.url).origin);
+  return new Response(html, {
+    headers: {
+      "Content-Type": "text/html; charset=utf-8",
+      "Cache-Control": "public, max-age=900, s-maxage=3600",
+    },
+  });
 }
