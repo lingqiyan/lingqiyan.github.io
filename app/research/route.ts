@@ -84,7 +84,7 @@ body::before {
 }
 .mbzuai-mark img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .mbzuai-name {
-  display: block; max-width: 380px; overflow: hidden; text-overflow: ellipsis;
+  display: block; max-width: 470px; overflow: hidden; text-overflow: ellipsis;
   color: #f0f0f0; font-size: 13px; font-weight: 600; letter-spacing: -.012em;
 }
 .steam-cart {
@@ -134,7 +134,7 @@ body::before {
 .container { max-width: 1120px !important; }
 body > .container { padding-top: 14px; padding-bottom: 26px; }
 body > .container::before {
-  content: "MBZUAI  ·  COMPUTING AND MATHEMATICAL SCIENCES DIVISION  ·  COMPUTER SCIENCE  ·  COMPUTER GRAPHICS";
+  content: "MOHAMED BIN ZAYED UNIVERSITY OF ARTIFICIAL INTELLIGENCE  ·  COMPUTING AND MATHEMATICAL SCIENCES DIVISION  ·  COMPUTER SCIENCE  ·  COMPUTER GRAPHICS";
   display: block; margin: 0 0 10px; color: #67c1f5; font-size: 11px;
   letter-spacing: .11em; text-shadow: 0 0 12px rgba(102,192,244,.32);
 }
@@ -730,7 +730,7 @@ function makeAbsolute(document: string, localOrigin: string) {
     )
     .replace(
       "UCSB Center of Interactive and Visual Computing (CIVC)",
-      `<span class="mbzuai-mark" aria-hidden="true"><img src="__LOCAL_ORIGIN__/mbzuai-icon-hd.png" alt=""></span><span class="mbzuai-name">Mohamed bin Zayed University of Artificial Intelligence</span>`,
+      `<span class="mbzuai-mark" aria-hidden="true"><img src="__LOCAL_ORIGIN__/mbzuai-icon-hd.png" alt=""></span><span class="mbzuai-name">Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)</span>`,
     )
     .replace(
       '<img class="img-fluid rounded" src="images/lingqi_v5.jpg" alt="">',
